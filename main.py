@@ -137,3 +137,15 @@ subject_marks = [('Język angielski', 88),
 cw_4 = sorted(subject_marks, key = lambda x: x[1])
 print(cw_4)
 
+# Ćwiczenie
+# Napisz program w Pythonie, aby posortować za pomocą lambda listę słowników po kluczu model lub kolor.
+models = [{'marka': 'Nokia',   'model': '3310',   'kolor': 'Czarny'},
+          {'marka': 'Apple',   'model': '11',     'kolor': 'Złoty'},
+          {'marka': 'Samsung', 'model': 'Galaxy', 'kolor': 'Srebrny'}]
+
+cw_5 = sorted(models, key = lambda x: x['kolor'], reverse= True)
+print(cw_5)
+
+cw_6 = lambda x: x.startswith('P')
+print(cw_6('Python'))
+
