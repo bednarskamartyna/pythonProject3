@@ -76,3 +76,64 @@ print(potega_6)
 kwadraty = [el**2 for el in range(1, 102) if el % 2 != 0]
 print(kwadraty)
 
+#tworzenie zbiorów
+
+zbior = {znak for znak in "abracadabra" if znak not in "abc"}
+print(zbior)
+
+#tworzenie słowników
+
+tekst = "abracadabra"
+wystapienia = {znak: tekst.count(znak) for znak in tekst}
+print(wystapienia)
+
+c = {x: x**2 for x in (2,4,6)}
+print(c)
+
+#wyrażenia generatorowe (generator expressions)
+list_comp = [x ** 0.5 for x in range(1, 11)]
+#lista powstaje w momencie wywołania wyrażenia
+gene_expr = (x ** 0.5 for x in range(1, 11))
+#tworzenie reguły pozwalającej na stworzenie listy ad hoc
+
+for x in list_comp:
+    print(x)
+
+for x in gene_expr:
+    print(x)
+
+list_comp = [x ** 0.5 for x in range(1, 50000001)]
+
+sum = 0
+for x in list_comp:
+    sum += x
+print(sum)
+
+gene_expr = (x ** 0.5 for x in range(1, 50000001))
+# gene_expr nie obliczyło jeszcze tych milionów pierwiastków
+
+sum = 0
+for x in gene_expr:
+    sum += x
+print(sum)
+
+# Ćwiczenie na rozgrzewkę
+# Utwórz funkcję lambda, która przyjmuje jeden parametr (a) i zwraca go
+
+cw_1 = lambda a: a
+print(cw_1(4))
+
+cw_2 = lambda a: a + 15
+print(cw_2(10))
+
+cw_3 = lambda x,y: x*y
+print(cw_3(10,4))
+
+
+subject_marks = [('Język angielski', 88),
+                 ('Nauka',           90),
+                 ('Matematyka',      97),
+                 ('Nauki społeczne', 82)]
+cw_4 = sorted(subject_marks, key = lambda x: x[1])
+print(cw_4)
+
