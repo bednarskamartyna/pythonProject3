@@ -49,3 +49,30 @@ from functools import reduce
 nums = [1, 2, 3, 4, 5]
 print(reduce(lambda a, b: a + b, nums))
 
+#lambda a,b: a if len(a) > len(b) else b
+
+#obliczanie iloczynu
+print(reduce(lambda a,b: a*b, [1,2,3,4]))
+
+#tworzenie zbiorów danych w locie (list comprehension)
+
+szesciany = []
+for x in range(10):
+    szesciany.append(x**3)
+
+print(szesciany)
+
+szesciany = [x**3 for x in range(10)]
+print(szesciany)
+
+# szesciany = [x**3 for x in (1,2,3)]  krotka
+# szesciany = [x**3 for x in [1,2,3]]  lista
+
+potega_6 = [x**3 for x in [x**3 for x in range(10)]]
+print(potega_6)
+
+#nowa_lista = [funkcja(el) for el in lista if warunek(el)]
+
+kwadraty = [el**2 for el in range(1, 102) if el % 2 != 0]
+print(kwadraty)
+
