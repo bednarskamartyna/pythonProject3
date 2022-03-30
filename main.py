@@ -36,3 +36,16 @@ wynik = list(filter(lambda x: x >= 40.0, temperatury))
 print(wynik)
 wynik_sort = sorted(wynik)
 print(wynik_sort)
+
+print(temperatury)
+from statistics import mean
+sr_temp = mean(temperatury)
+print(sr_temp)
+
+odch = list(map(lambda x: round(x - sr_temp, 1), temperatury))
+print(odch)
+
+from functools import reduce
+nums = [1, 2, 3, 4, 5]
+print(reduce(lambda a, b: a + b, nums))
+
