@@ -1,5 +1,6 @@
 #podstawowa składnia funkcji anonimowej
 #lambda arg1, arg2: arg1 ** arg2
+import datetime
 
 pitagoras = lambda a, b: ((a*a) + (b*b)) ** 0.5
 print(pitagoras(3,4))
@@ -149,3 +150,60 @@ print(cw_5)
 cw_6 = lambda x: x.startswith('P')
 print(cw_6('Python'))
 
+cw_6_2 = lambda x,y: x.startswith(y)
+print(cw_6_2('Python', 'j'))
+
+
+
+# Napisz program w Pythonie, aby wyodrębnić rok, miesiąc, dzień i godzinę za pomocą lambda
+# Podpowiedź: skorzystaj z modułu datetime:
+# now = datetime.datetime.now() - przypisuje do nowaktualną lokalną datę i godzinę.
+# now.year - wyodrębnia i zwraca rok z now.
+# now.month - wyodrębnia i zwraca miesiąc z now.
+# now.day - wyodrębnia i zwraca dzień z now.
+# now.time() - wyodrębnia i zwraca godzinę z now.
+
+import datetime
+now = datetime.datetime.now()
+print(now)
+year = lambda x: x.year
+print(year(now))
+month = lambda x: x.month
+print(month(now))
+day= lambda x: x.day
+print(day(now))
+time = lambda x: x.time()
+print(time(now))
+
+# Ćwiczenie
+# Napisz program w Pythonie, aby sprawdzić, czy dany ciąg jest liczbą, czy nie, używając lambda
+# Podpowiedź: przydatna metoda to
+# string.replace(oldvalue, newvalue, count)
+# Składnia parametrów:
+# oldvalue – Wymagany; ciąg do wyszukania
+# newvalue – Wymagany; ciąg znaków, który ma zastąpić starą wartość
+# count – Opcjonalny; liczba określająca, ile wystąpień starej wartości chcesz zastąpić; domyślnie są to wszystkie wystąpienia
+
+
+cw_8 = lambda x: x.replace('.','',1).isdigit()
+prework = lambda x: cw_8(x) if x[0] != '-' else cw_8(x[1:])
+prework("678")
+prework("7.56")
+prework("-7.56")
+
+# Napisz program w Pythonie do filtrowania listy liczb parzystych i nieparzystych całkowitych za pomocą lambda i filter
+nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+parzyste = list(filter(lambda x: x%2 == 0, nums))
+print(parzyste)
+
+nieparzyste = list(filter(lambda x: x%2 != 0, nums))
+print(nieparzyste)
+
+# Ćwiczenie
+# Napisz program w Pythonie, aby znaleźć przecięcie dwóch podanych list za pomocą lambda i filter
+array_nums1 = [1, 2, 3, 5, 7, 8, 9, 10]
+array_nums2 = [1, 2, 4, 8, 9]
+
+check = list(filter(lambda x: x in array_nums2, array_nums1))
+print(check)
